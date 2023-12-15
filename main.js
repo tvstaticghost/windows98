@@ -178,8 +178,23 @@ const notepadEdit = document.getElementById('notepad-edit');
 const notepadSearch = document.getElementById('notepad-search');
 const notepadHelp = document.getElementById('notepad-help');
 
+const colorSlider = document.getElementById('color-slider');
+const root = document.querySelector(':root');
+const selectedColor = document.getElementById('selected-color');
+const setBtn = document.getElementById('set-btn');
 
+colorSlider.addEventListener('input', () => {
+    const hue = colorSlider.value;
+    selectedColor.style.borderColor = `hsl(${hue},100%,25.1%)`;
+    selectedColor.style.backgroundColor = `hsl(${hue},100%,25.1%)`;
+});
 
+setBtn.addEventListener('click', setBackgroundColor);
+
+function setBackgroundColor() {
+    const hue = colorSlider.value;
+    root.style.setProperty('--teal', `hsl(${hue},100%,25.1%)`);
+}
 
 /* start button script */
 

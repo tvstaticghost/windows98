@@ -10,7 +10,7 @@
     <div class="shortcut__wrapper">
         <div class="file__explorer" id="file-explorer">
             <img src="assets/icons8-monitor-30.png" alt="folder" id="folder">
-            <p class="shortcut__description">File Explorer</p>
+            <p class="shortcut__description">Display Settings</p>
         </div>
         <div class="notepad__wrapper" id="note-pad">
             <img src="assets/icons8-note-48.png" alt="note" id="note">
@@ -29,7 +29,6 @@
                 <div class="notepad__option" id="max-btn">&#128470;</div>
                 <div class="notepad__option" id="exit-btn">&#x2716;</div>
             </div>
-
         </div>
         <div class="notepad__settings">
             <ul class="notepad__list">
@@ -54,6 +53,34 @@
                 <div class="notepad__option" id="display-exit">&#x2716;</div>
             </div>
         </div>
+        <div class="display__settings">
+            <ul class="display__list">
+                <li class="display__option">Background</li>
+                <li class="display__option">Appearance</li>
+                <li class="display__option">Settings</li>
+                <li class="display__option">Font Size</li>
+            </ul>
+        </div>
+        <div class="display__menu">
+            <img src="assets/icons8-monitor-50.png" alt="monitor" class="monitor__image">
+            <div class="display__background">
+                <fieldset>
+                    <legend>Background Color</legend>
+                    <input type="range" id="color-slider" min="0" max="360" value="0">
+                    <div class="selected-color" id="selected-color"></div>
+                </fieldset>
+                <button class="set__btn" id="set-btn">Set Background</button>
+            </div>
+            <div class="display__appearance">
+
+            </div>
+            <div class="display__setting">
+
+            </div>
+            <div class="display__fontsize">
+
+            </div>
+        </div>
     </div>
 
     <div class="bottom__menu">
@@ -72,6 +99,16 @@
     <div class="start__closed" id="menu-list">
         <div class="blue__logo">
             <p class="windows__text"><strong>Windows</strong>98</p>
+        </div>
+        <div class="menu__options">
+            <div class="display__program menu__program" id="display-programhere">
+                <img src="assets/icons8-monitor-30.png" alt="monitor">
+                <p>Display Properties</p>
+            </div>
+            <div class="notepad__program menu__program" id="notepad-programhere">
+                <img src="assets/icons8-note-48.png" alt="notepad">
+                <p>NotePad</p>
+            </div>
         </div>
     </div>
 <script src="main.js"></script>
