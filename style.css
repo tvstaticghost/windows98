@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Inter&display=swap');
+
+:root {
+    --blue: #010081;
+    --pink: #ff0081;
+    --teal: #008080;
+    --black: #000000;
+    --light-gray: #c3c3c3;
+    --gray: #818181;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--teal);
+}
+
+.taskbar__add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 11rem;
+    height: 1rem;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 1rem 0.2rem;
+    box-shadow: 1px 1px 1px white, -1px -1px 1px var(--black);
+}
+
+.taskbar__min {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 11rem;
+    height: 1rem;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 1rem 0.2rem;
+    box-shadow: 1px 1px 1px var(--black), -1px -1px 1px white;
+}
+
+.taskbar__min:hover, .taskbar__add:hover {
+    cursor: pointer;
+}
+
+.task__expand {
+    position: absolute;
+    height: 90svh;
+    width: 99svw;
+    top: 1px;
+    left: 1px;
+    background-color: var(--light-gray);
+    resize: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: none;
+}
+
+.bottom__menu {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: var(--light-gray);
+    width: 100%;
+    padding: 0.3rem;
+}
+
+.menu__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.start__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.start__wrapper > p {
+    font-size: 28px;
+    color: var(--gray);
+}
+
+#box__line {
+    text-shadow: 1px 1px 1px var(--black), -1px -1px -1px white;
+}
+
+.start__btn {
+    padding: 0.3rem 0.7rem;
+    font-weight: 700;
+    background-color: var(--light-gray);
+    display: flex;
+    border: none;
+    align-items: center;
+    box-shadow: 1px 1px 1px var(--black), -1px -1px 1px white;
+    font-size: 16px;
+}
+
+.start__btn:hover {
+    cursor: pointer;
+}
+
+.startbtn__clicked {
+    padding: 0.3rem 0.7rem;
+    font-weight: 700;
+    background-color: var(--light-gray);
+    display: flex;
+    border: none;
+    align-items: center;
+    box-shadow: 1px 1px 1px white, -1px -1px 1px var(--black);
+    font-size: 16px;
+}
+
+.startbtn__clicked:hover {
+    cursor: pointer;
+}
+
+.windows__logo {
+    width: 20px;
+    rotate: -20deg;
+}
+
+.icon__wrapper {
+    display: flex;
+    align-items: center;
+}
+
+#ie {
+    width: 26px;
+    height: 26px;
+}
+
+#ie:hover {
+    cursor: pointer;
+}
+
+#time {
+    padding: 0.3rem 1.5rem;
+    background-color: var(--light-gray);
+    border: none;
+    font-weight: 700;
+    box-shadow: 1px 1px 1px white, -1px -1px 1px var(--black);
+}
+
+/*definitely need a media query for this */
+/* start menu style */
+
+
+
+.start__menu {
+    background-color: var(--light-gray);
+    position: absolute;
+    width: 18rem;
+    height: 25rem;
+    border: 1px solid var(--black);
+    box-shadow: 1px 1px 1px var(--light-gray) inset;
+    left: 0;
+    bottom: 45px;
+    display: flex;
+}
+
+.start__closed {
+    display: none;
+}
+
+.blue__logo {
+    background-color: var(--blue);
+    width: 2.5rem;
+    margin-left: 5px;
+}
+
+.windows__text {
+    transform: rotate(270deg);
+    color: white;
+    margin-top: 22rem;
+    font-size: 2rem;
+}
+
+/* application style */
+
+.shortcut__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem;
+}
+
+.file__explorer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    border: none;
+}
+
+.notepad__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    border: none;
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+}
+
+.add__border {
+    border: 1px dotted var(--light-gray);
+}
+
+.file__explorer:hover, #note:hover {
+    cursor: pointer;
+}
+
+.shortcut__description {
+    color: white;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+#folder, #note {
+    width: 48px;
+}
+
+.notepad__exe {
+    position: absolute;
+    height: 30svh;
+    width: 20svw;
+    top: 30%;
+    left: 50%;
+    background-color: var(--light-gray);
+    resize: both;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: none;
+}
+
+.notepad__header {
+    margin: 0.1rem;
+    background-image: linear-gradient(to right, var(--blue), var(--teal));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notepad__headbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.notepad__image {
+    margin: 0.1rem;
+    width: 20px;
+}
+
+.notepad__headertext {
+    color: white;
+    font-size: 0.9em;
+}
+
+.notepad__options {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    margin-right: 0.2rem;
+}
+
+.notepad__option {
+    width: 20px;
+    height: 20px;
+    background-color: var(--light-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notepad__options:hover {
+    cursor: pointer;
+}
+
+.notepad__list {
+    list-style-type: none;
+    display: flex;
+    font-size: 0.8rem;
+    padding-left: 0.3rem;
+    gap: 10px;
+    padding-top: 3px;
+}
+
+.notepad__list > li:hover {
+    cursor: pointer;
+
+}
+
+.notepad__write {
+    width: 99.5%;
+    height: 93%;
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 0.5rem;
+    margin: 0.4rem 0.2rem 0.2rem 0.2rem;
+}
+
+.display__exe {
+    position: absolute;
+    height: 60svh;
+    width: 40svw;
+    left: 33%;
+    top:10%;
+    background-color: var(--light-gray);
+    display: none;
+}
+
+.display__icon {
+    margin: 0.1rem;
+    width: 20px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%); 
+}
+
+.display__headertext { 
+    color: white;
+    font-size: 0.9em;
+    margin-left: 0.3rem;
+}
+
+/* options style */
+
+.notepad__file {
+    background-color: var(--light-gray);
+    height: 1rem;
+    width: 1rem;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="shortcut__wrapper">
+        <div class="file__explorer" id="file-explorer">
+            <img src="assets/icons8-monitor-30.png" alt="folder" id="folder">
+            <p class="shortcut__description">File Explorer</p>
+        </div>
+        <div class="notepad__wrapper" id="note-pad">
+            <img src="assets/icons8-note-48.png" alt="note" id="note">
+            <p class="shortcut__description">NotePad</p>
+        </div> 
+    </div>
+
+    <div class="notepad__exe" id="notepad-exe">
+        <div class="notepad__header">
+            <div class="notepad__headbar">
+                <img src="assets/icons8-note-48.png" alt="note" class="notepad__image">
+                <p class="notepad__headertext">Untitled.txt - NotePad</p>
+            </div>
+            <div class="notepad__options">
+                <div class="notepad__option" id="min-btn">&#128469;</div>
+                <div class="notepad__option" id="max-btn">&#128470;</div>
+                <div class="notepad__option" id="exit-btn">&#x2716;</div>
+            </div>
+
+        </div>
+        <div class="notepad__settings">
+            <ul class="notepad__list">
+                <li id="notepad-file" class="notepad__file">File</li>
+                <li id="notepad-edit" class="notepad__edit">Edit</li>
+                <li id="notepad-search" class="notepad__search">Search</li>
+                <li id="notepad-help" class="notepad__help">Help</li>
+            </ul>
+        </div>
+        <textarea name="notepad-exe" id="notepad-exe" cols="50" rows="20" class="notepad__write"></textarea>
+    </div>
+
+    <div class="display__exe" id="display-exe">
+        <div class="notepad__header">
+            <div class="notepad__headbar">
+                <img src="assets/icons8-monitor-30.png" alt="monitor" class="display__icon">
+                <p class="display__headertext">Display Properties</p>
+            </div>
+            <div class="notepad__options">
+                <div class="notepad__option" id="display-min">&#128469;</div>
+                <div class="notepad__option" id="display-max">&#128470;</div>
+                <div class="notepad__option" id="display-exit">&#x2716;</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom__menu">
+        <div class="menu__wrapper">
+            <div class="start__wrapper" id="start-menu">
+                <button id="start-btn" class="start__btn"><img src="assets/icons8-windows-95-48.png" alt="windows" class="windows__logo">Start</button>
+                <p>|</p>
+                <div class="icon__wrapper">
+                    <img src="assets/icons8-internet-explorer-48.png" alt="IE" id="ie">
+                </div>
+                <p id="box__line">|</p>
+            </div>
+            <button id="time"></button>
+        </div>
+    </div>
+    <div class="start__closed" id="menu-list">
+        <div class="blue__logo">
+            <p class="windows__text"><strong>Windows</strong>98</p>
+        </div>
+    </div>
+<script src="main.js"></script>
+</body>
+</html>
