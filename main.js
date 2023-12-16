@@ -32,6 +32,8 @@ setInterval(displayTime, 1000);
 
 const display = document.getElementById('file-explorer');
 const notepad = document.getElementById('note-pad');
+const displayProgram = document.getElementById('display-programhere');
+const notepadProgram = document.getElementById('notepad-programhere');
 display.addEventListener('click', () => highlight(display));
 notepad.addEventListener('click', () => highlight(notepad));
 
@@ -50,6 +52,14 @@ function highlight(shortcut) {
 notepad.addEventListener('dblclick', () => openApplication(notepadExe));
 display.addEventListener('dblclick', () => openApplication(displayExe));
 
+displayProgram.addEventListener('click', function() {
+    openApplication(displayExe);
+    renderStartMenu();
+});
+notepadProgram.addEventListener('click', function () {
+    openApplication(notepadExe);
+    renderStartMenu();
+});
 
 const notepadExe = document.getElementById('notepad-exe');
 const displayExe = document.getElementById('display-exe');
@@ -61,7 +71,6 @@ const displayExit = document.getElementById('display-exit');
 const displayMin = document.getElementById('display-min');
 const displayMax = document.getElementById('display-max');
 
-const div = document.createElement('div');
 const startMenu = document.getElementById('start-menu');
 const img = document.createElement('img');
 const openWith = document.getElementById('application-tab');
@@ -74,13 +83,19 @@ const applicationList = [
 let noteListenerAdded = false;
 let displayListenerAdded = false;
 
+let notepadOpen = false;
+let displayOpen = false;
+
 exit.addEventListener('click', () => closeApplication(notepadExe));
 max.addEventListener('click', () => expandWindow(notepadExe));
 
 displayExit.addEventListener('click', () => closeApplication(displayExe));
 displayMax.addEventListener('click', () => expandWindow(displayExe));
 
+
+
 function openApplication(application) {
+    const div = document.createElement('div');
 
     let myEventListner = function () {
         console.log('click');
@@ -92,18 +107,17 @@ function openApplication(application) {
         }
     };
 
+    if ((application === notepadExe && notepadOpen === false)) { 
+        createTask(notepadExe);
+        displayOpen = true;
+    }
+
+    if ((application === displayExe && displayOpen === false)) {
+        createTask(displayExe);
+        notepadOpen = true;
+    }
+
     application.style.display = 'block';
-    startMenu.appendChild(div);
-    div.setAttribute('id', 'application-tab');
-
-    if (application.classList.contains('notepad__exe')) {
-        div.textContent = applicationList[0];
-    }
-    else {
-        div.textContent = applicationList[1];
-    }
-
-    div.classList.add('taskbar__add');
 
     const openWith = document.getElementById('application-tab');
 
@@ -125,6 +139,20 @@ function openApplication(application) {
     }
 }
 
+function createTask(application) {
+
+    const div = document.createElement('div');
+    startMenu.appendChild(div);
+    div.setAttribute('id', 'application-tab');
+    div.classList.add('taskbar__add');
+    if (application === notepadExe) {
+        div.textContent = applicationList[0];
+    }
+    else {
+        div.textContent = applicationList[1];
+    }
+}
+
 function closeApplication(application) {
     application.style.display = 'none';
     startMenu.removeChild(document.getElementById('application-tab'));
@@ -136,6 +164,7 @@ function closeApplication(application) {
 }
 
 function minimizeApplication(application, bar) {
+    const div = document.querySelectorAll('.taskbar__add');
     application.style.display = 'none';
     bar.classList.remove('taskbar__add');
     bar.classList.add('taskbar__min');
